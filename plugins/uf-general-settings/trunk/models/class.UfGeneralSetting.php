@@ -8,7 +8,6 @@ if (! class_exists('UfGeneralSetting')) {
  		        $this->name = $name;
 			$this->value = $value;
 		}
-
 	}
 }
 ?>

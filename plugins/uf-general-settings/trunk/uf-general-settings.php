@@ -35,10 +35,7 @@ function uf_general_settings_email($protect = '') {
 
 	$email = get_option('uf_general_setting_email');
 	if($email) {
-	    if($protect == 'protect') {
-	        $email = antispambot($email);
-	    }
-	    return $email;
+             return $email;
 	}
 }
 

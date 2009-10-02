@@ -17,44 +17,35 @@ $uf_general_settings_plugin = null;
 function uf_general_settings_plugins_loaded() {
 	global $uf_general_settings_plugin;
 
-        require_once('models/class.UfGeneralSetting.php');
-
-	$settings = array( 
-	    'unit_represented'    => new UfGeneralSetting('Unit Represented', get_option('uf_general_setting_unit_represented')),
-	    'email'    => new UfGeneralSetting('Email', get_option('uf_general_setting_email')),
-	    'display_email'    => new UfGeneralSetting('Display email', get_option('uf_general_setting_display_email')),
-	    'telephone'    => new UfGeneralSetting('Telephone', get_option('uf_general_setting_telephone')),
-            'address'      => new UfGeneralSetting('Address', get_option('uf_general_setting_address')),
-	);
-
 	require_once('plugins/class.UfGeneralSettingsPlugin.php');
-
-	$uf_general_settings_plugin = new UfGeneralSettingsPlugin('Acceptable Use Policy', __FILE__, $settings);
-
+	$uf_general_settings_plugin = new UfGeneralSettingsPlugin('Acceptable Use Policy', __FILE__);
 }
 
 function uf_general_settings_unit_represented() {
 	global $uf_general_settings_plugin;
 
-	$unit_represented = $uf_general_settings_plugin->settings['unit_represented']->value;
+	$unit_represented = get_option('uf_general_setting_unit_represented');
 	if($unit_represented) {
 	     return $unit_represented;
 	}
 }
 
-function uf_general_settings_email() {
+function uf_general_settings_email($protect = '') {
 	global $uf_general_settings_plugin;
 
-	$email = $uf_general_settings_plugin->settings['email']->value;
+	$email = get_option('uf_general_setting_email');
 	if($email) {
-	     return $email;
+	    if($protect == 'protect') {
+	        $email = antispambot($email);
+	    }
+	    return $email;
 	}
 }
 
 function uf_general_settings_telephone() {
 	global $uf_general_settings_plugin;
 
-	$telephone = $uf_general_settings_plugin->settings['telephone']->value;
+	$telephone = get_option('uf_general_setting_telephone');
 	if($telephone) {
 	     return $telephone;
 	}
@@ -63,7 +54,7 @@ function uf_general_settings_telephone() {
 function uf_general_settings_address() {
 	global $uf_general_settings_plugin;
   
-	$address = $uf_general_settings_plugin->settings['address']->value;
+	$address = get_option('uf_general_setting_address');
 	if($address) {
 	     return $address;
 	}

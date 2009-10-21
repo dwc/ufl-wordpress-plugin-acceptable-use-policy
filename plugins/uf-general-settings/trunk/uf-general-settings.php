@@ -22,8 +22,6 @@ function uf_general_settings_plugins_loaded() {
 }
 
 function uf_general_settings_unit_represented() {
-	global $uf_general_settings_plugin;
-
 	$unit_represented = get_option('uf_general_setting_unit_represented');
 	if($unit_represented) {
 	     return $unit_represented;
@@ -31,8 +29,6 @@ function uf_general_settings_unit_represented() {
 }
 
 function uf_general_settings_email($protect = '') {
-	global $uf_general_settings_plugin;
-
 	$email = get_option('uf_general_setting_email');
 	if($email) {
              return $email;
@@ -40,8 +36,6 @@ function uf_general_settings_email($protect = '') {
 }
 
 function uf_general_settings_telephone() {
-	global $uf_general_settings_plugin;
-
 	$telephone = get_option('uf_general_setting_telephone');
 	if($telephone) {
 	     return $telephone;
@@ -49,8 +43,6 @@ function uf_general_settings_telephone() {
 }
 
 function uf_general_settings_address() {
-	global $uf_general_settings_plugin;
-  
 	$address = get_option('uf_general_setting_address');
 	if($address) {
 	     return $address;

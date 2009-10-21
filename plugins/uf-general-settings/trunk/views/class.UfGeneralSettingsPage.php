@@ -13,7 +13,8 @@ if (! class_exists('UfGeneralSettingsPage')) {
 	    $unit_represented = get_option('uf_general_setting_unit_represented');
 	    $telephone = get_option('uf_general_setting_telephone');
 	    $email = get_option('uf_general_setting_email');
-	    $address = get_option('uf_general_setting_address')
+	    $address = get_option('uf_general_setting_address');
+
 ?>
      <h3>General</h3>
      <form method="post" action="<?php echo htmlspecialchars(uf_plugin_framework_admin_uri()); ?>" enctype="multipart/form-data">
@@ -44,7 +45,8 @@ if (! class_exists('UfGeneralSettingsPage')) {
          <?php $this->submit_button('Update Options'); ?>
      </form>
 <?
+	}
     }
-  }
 }
+
 ?>

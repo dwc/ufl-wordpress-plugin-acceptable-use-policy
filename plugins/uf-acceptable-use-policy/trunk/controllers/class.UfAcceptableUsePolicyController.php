@@ -1,8 +1,8 @@
 <?php
 require_once(UF_PLUGIN_FRAMEWORK_LIBRARY . '/class.UfController.php');
 
-if (! class_exists('UfGeneralSettingsController')) {
-    class UfGeneralSettingsController extends UfController {
+if (! class_exists('UfAcceptableUsePolicyController')) {
+    class UfAcceptableUsePolicyController extends UfController {
 
         function handle_update_action() {
 	    $unit_represented = trim($_POST['unit_represented']);
@@ -12,10 +12,10 @@ if (! class_exists('UfGeneralSettingsController')) {
 
 	    $error = null;
 	    if($telephone and $unit_represented and $address and $email) {
-	        update_option('uf_general_setting_unit_represented', $unit_represented);
-	        update_option('uf_general_setting_telephone', $telephone);
-	        update_option('uf_general_setting_address', $address);
-		update_option('uf_general_setting_email', $email);
+	        update_option('uf_acceptable_use_policy_unit_represented', $unit_represented);
+	        update_option('uf_acceptable_use_policy_telephone', $telephone);
+	        update_option('uf_acceptable_use_policy_address', $address);
+		update_option('uf_acceptable_use_policy_email', $email);
 	    }
 	    else {
 	        $error = 'Missing form fields. All fields are required.';

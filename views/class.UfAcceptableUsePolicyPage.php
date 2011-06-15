@@ -44,7 +44,7 @@ if (! class_exists('UfAcceptableUsePolicyPage')) {
 
          <?php $this->submit_button('Update Options'); ?>
      </form>
-<?
+<?php
 	}
     }
 }

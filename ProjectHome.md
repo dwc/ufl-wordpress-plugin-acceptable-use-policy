@@ -1,0 +1,3 @@
+For use by web managers at the [University of Florida](http://www.ufl.edu/) who want to easily comply with the [Acceptable Use Policy](http://www.it.ufl.edu/policies/aupolicy.html) with [Web Administration](http://www.webadmin.ufl.edu/) [WordPress Template A](http://code.google.com/p/ufl-wordpress-template-a/).
+
+**Note**: This plugin requires [ufl-wordpress-plugin-framework](http://code.google.com/p/ufl-wordpress-plugin-framework/).
